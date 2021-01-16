@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"> 
+  <title>418 I'm a teapot</title>
+  <meta name="description" content="Teapot - är stället för att hålla koll på sina kompisar men samtidgt veta exakt vad som är delat till vem.">
+  <meta name="author" content="Team 418: I'm a teapot">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/kettle.png"> 
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="css/mdb.min.css">
+  <!-- My CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="text-center" screen_capture_injected="true">
+    <form class="form-signin" name="loginform" onSubmit="return validateForm();" action="feed.html" method="post">
+    <img class="mb-4" src="img/kettle.png" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Logga in</h1>
+    <label for="inputEmail" class="sr-only">Username</label>
+    <input type="text" name="usr" id="inputEmail" class="form-control" placeholder="Username" required="" autofocus="">
+    <label for="inputPassword" class="sr-only">Lösenord</label>
+    <input type="password" name="pword" id="inputPassword" class="form-control" placeholder="Password" required="">
+    <input type="submit" value="Login" class="btn btn-lg"/>
+    </form>
+
+  <!--Footer-->
+
+     <!-- jQuery -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+     <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+     <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+     <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+
+  <!--FUNKTION FÖR INLOGG, SPARAR ANVÄNDARE I LOCALSTORAGE OCH KOLLAR SÅ ATT INLOGG STÄMMER*/-->
+  <script>
+  function validateForm() {
+    var un = document.loginform.usr.value;
+      var pw = document.loginform.pword.value;
+      var username = "username"; 
+      window.localStorage.setItem('username',username);
+      var password = "password";
+      if ((un == username) && (pw == password)) {
+          return true;
+          }
+          else {
+             alert ("Login was unsuccessful, please check your username and password");
+             return false;
+              }
+    }
+  </script>
+
+  <!--HÄMTAR USERNAME FRÅN LOCALSTORAGE OCH VISAR DET I WELCOMEMESSAGE-->
+  <script>
+    window.onload = function() {
+     var name = localStorage.getItem('username');
+     if (name != "undefined" || name != "null") {
+     document.getElementById('welcomeMessage').innerHTML = "Hello " + name + "!";
+     } 
+     else
+     document.getElementById('welcomeMessage').innerHTML = "Hello!";
+      }
+  </script>
+
+</body>
+</html>
+
+
