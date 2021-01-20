@@ -25,6 +25,7 @@
 </head>
 
 <body>
+
   <header>
   <!--Navbar -->
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark">
@@ -51,7 +52,7 @@
       	<li class="nav-item">
           <a class="nav-link" href="index.html" title="Logga ut"><i class="fas fa-sign-out-alt"></i>Logga ut</a>
           <li class="nav-item">
-            <a class="nav-link" href="profil.html" id="formName" title="Min profil"><i></i></a>
+            <a class="nav-link" href="profil.html" id="formName" title="Min profil"></a>
           </li>
         </li>
       </ul>
@@ -250,6 +251,7 @@
     <script type="text/javascript" src="js/popper.min.js"></script>
      <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javaScript" src="js/base.js"></script>
 
     <script>
       $(document).ready(function(){
@@ -257,16 +259,6 @@
       });
     </script>
 
-<!-- SCRIPT FÖR ATT VISA USERNAME PÅ SIDAN EFTER INLOGGNING-->
-    <script>
-    window.onload = function() {
-       var name = localStorage.getItem('username');
-       if (name != "undefined" || name != "null") {
-       document.getElementById('welcomeMessage').innerHTML = "Hello " + name + "!";
-       } else
-       document.getElementById('welcomeMessage').innerHTML = "Hello!";
-        }
-    </script>
 
 </body>
 </html>

@@ -23,7 +23,16 @@
 </head>
 
 <body class="text-center" screen_capture_injected="true">
-    <form class="form-signin" name="formName" onsubmit="return checkPass()" action="feed.html">
+    <form class="form-signin" name="formName" action="feed.html" onsubmit="return checkPass()">
+    <img class="mb-4" src="img/kettle.png" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Logga in</h1>
+    <input type="password"  name="password" class="form-control" placeholder="Password"></p>
+    <p id="passStatus">  </p>
+      <input type="submit" value="Submit">
+    </form>
+
+
+    <!--<form class="form-signin" name="formName" onsubmit="return checkPass()" action="feed.html">
     <img class="mb-4" src="img/kettle.png" alt="" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal">Logga in</h1>
     <label for="inputEmail" class="sr-only">Username</label>
@@ -34,7 +43,7 @@
 
     <button  onclick="makeCookie()" id="passStatus" placeholder="Mailadress" type="submit" class="btn btn-lg">Logga in</button>
     <div id="putThatCookieDown"><div>
-    </form>
+    </form>-->
 
   <!--Footer-->
 
@@ -46,8 +55,7 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
      <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
-
-<script>
+    <script type="text/javascript" src="js/inloggning.js"></script>
 
 
 </body>
