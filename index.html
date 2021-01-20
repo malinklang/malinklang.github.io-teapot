@@ -23,14 +23,17 @@
 </head>
 
 <body class="text-center" screen_capture_injected="true">
-    <form class="form-signin" name="loginform" onSubmit="return validateForm();" action="feed.html" method="post">
+    <form class="form-signin" name="formName" onsubmit="return checkPass()" action="feed.html">
     <img class="mb-4" src="img/kettle.png" alt="" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal">Logga in</h1>
     <label for="inputEmail" class="sr-only">Username</label>
-    <input type="text" name="usr" id="inputEmail" class="form-control" placeholder="Username" required="" autofocus="">
+    <input type="text" name="inputEmail" id="inputEmail" class="form-control" placeholder="Mailadress" required="" autofocus="">
     <label for="inputPassword" class="sr-only">Lösenord</label>
-    <input type="password" name="pword" id="inputPassword" class="form-control" placeholder="Password" required="">
-    <input type="submit" value="Login" class="btn btn-lg"/>
+    <input type="password" name="password" class="form-control" placeholder="Password" required="">
+    <p id="passStatus"></p>
+
+    <button  onclick="makeCookie()" id="passStatus" placeholder="Mailadress" type="submit" class="btn btn-lg">Logga in</button>
+    <div id="putThatCookieDown"><div>
     </form>
 
   <!--Footer-->
@@ -44,36 +47,8 @@
      <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
 
+<script>
 
-  <!--FUNKTION FÖR INLOGG, SPARAR ANVÄNDARE I LOCALSTORAGE OCH KOLLAR SÅ ATT INLOGG STÄMMER*/-->
-  <script>
-  function validateForm() {
-    var un = document.loginform.usr.value;
-      var pw = document.loginform.pword.value;
-      var username = "username"; 
-      window.localStorage.setItem('username',username);
-      var password = "password";
-      if ((un == username) && (pw == password)) {
-          return true;
-          }
-          else {
-             alert ("Login was unsuccessful, please check your username and password");
-             return false;
-              }
-    }
-  </script>
-
-  <!--HÄMTAR USERNAME FRÅN LOCALSTORAGE OCH VISAR DET I WELCOMEMESSAGE-->
-  <script>
-    window.onload = function() {
-     var name = localStorage.getItem('username');
-     if (name != "undefined" || name != "null") {
-     document.getElementById('welcomeMessage').innerHTML = "Hello " + name + "!";
-     } 
-     else
-     document.getElementById('welcomeMessage').innerHTML = "Hello!";
-      }
-  </script>
 
 </body>
 </html>
